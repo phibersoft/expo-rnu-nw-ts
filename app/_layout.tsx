@@ -4,6 +4,7 @@ import { NAV_THEME } from "@/lib/constants";
 import { useColorScheme } from "@/lib/hooks";
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import "@/global.css";
 
 const LIGHT_THEME: Theme = {
   dark: false,
@@ -48,8 +49,12 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-      <Stack>
-        <Stack.Screen name={"index"} options={{ title: "Hello World" }} />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name={"index"} />
       </Stack>
     </ThemeProvider>
   );
