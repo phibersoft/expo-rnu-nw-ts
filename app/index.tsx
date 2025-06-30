@@ -1,11 +1,16 @@
-import { Text, View } from "react-native";
+import { Text } from "react-native";
+import { Link } from "expo-router";
+import { SafeAreaView } from "@/components/ui/safe-area-view";
 
 export default function Index() {
   return (
-    <View>
-      <Text className={"text-blue-600 text-2xl"}>
-        Edit app/index.tsx to edit this screen. abbccdeee
+    <SafeAreaView>
+      <Text className={"text-2xl"}>
+        Edit app/index.tsx to edit this screen.
       </Text>
-    </View>
+      <Link href={"/one"}>
+        <Text className={"text-blue-600 text-2xl"}>Go to One Page</Text>
+      </Link>
+    </SafeAreaView>
   );
 }
