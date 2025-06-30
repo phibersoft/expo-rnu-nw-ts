@@ -1,8 +1,8 @@
 import { SplashScreen, Stack } from "expo-router";
-import {DefaultTheme, Theme, ThemeProvider} from "@react-navigation/native";
+import { DefaultTheme, Theme, ThemeProvider } from "@react-navigation/native";
 import { NAV_THEME } from "@/lib/constants";
 import { useColorScheme } from "@/lib/hooks";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import "@/global.css";
 
@@ -22,7 +22,7 @@ export { ErrorBoundary } from "expo-router";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
+const RootLayout: FC = () => {
   const { colorScheme, setColorScheme, isDarkColorScheme } = useColorScheme();
   const [isColorSchemeLoaded, setIsColorSchemeLoaded] = useState(false);
 
@@ -60,4 +60,6 @@ export default function RootLayout() {
       </Stack>
     </ThemeProvider>
   );
-}
+};
+
+export default RootLayout;

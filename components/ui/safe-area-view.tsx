@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { FC } from "react";
 
-type SafeAreaViewProps = ViewProps & {
+export type SafeAreaViewProps = ViewProps & {
   insideScrollView?: boolean;
 };
 

@@ -1,8 +1,9 @@
 import { Text } from "react-native";
 import { Link } from "expo-router";
-import { SafeAreaView } from "@/components/ui/safe-area-view";
+import { SafeAreaView } from "@/components/ui";
+import { FC } from "react";
 
-export default function Index() {
+const Index: FC = () => {
   return (
     <SafeAreaView>
       <Text className={"text-2xl"}>
@@ -13,4 +14,6 @@ export default function Index() {
       </Link>
     </SafeAreaView>
   );
-}
+};
+
+export default Index;
