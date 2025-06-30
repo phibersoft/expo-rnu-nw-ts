@@ -1,5 +1,5 @@
 import { SplashScreen, Stack } from "expo-router";
-import { Theme, ThemeProvider } from "@react-navigation/native";
+import {DefaultTheme, Theme, ThemeProvider} from "@react-navigation/native";
 import { NAV_THEME } from "@/lib/constants";
 import { useColorScheme } from "@/lib/hooks";
 import { useEffect, useState } from "react";
@@ -7,11 +7,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import "@/global.css";
 
 const LIGHT_THEME: Theme = {
+  ...DefaultTheme,
   dark: false,
   colors: NAV_THEME.light,
 };
 
 const DARK_THEME: Theme = {
+  ...DefaultTheme,
   dark: true,
   colors: NAV_THEME.dark,
 };
